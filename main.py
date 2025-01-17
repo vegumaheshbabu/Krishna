@@ -72,9 +72,9 @@ def run_flow(message: str) -> dict:
 def main():
     st.title("Radhe Radhe..")
     
-    message = st.text_area("Message", placeholder="Enter your question")
+    message = st.text_area("Message", placeholder="Enter your question to question")
     
-    if st.button("Run Flow"):
+    if st.button("Submit"):
         if not message.strip():
             st.error("Enter a message")
             return

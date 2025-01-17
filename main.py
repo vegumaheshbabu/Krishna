@@ -34,11 +34,15 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-current_dir = os.path.dirname(__file__)
-
-
-resume_image = os.path.join(current_dir, 'krishna.gif')
-st.image(resume_image, width=650, use_container_width='auto')
+# Hosted GIF URL from GitHub
+st.markdown(
+    f"""
+    <div style="text-align: center;">
+        <img src="https://https://github.com/vegumaheshbabu/Krishna/edit/main/krishna.gif" alt="krishna gif" width="650">
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 
 def run_flow(message: str) -> dict:

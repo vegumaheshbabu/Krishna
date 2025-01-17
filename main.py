@@ -34,16 +34,26 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Hosted GIF URL from GitHub
-st.markdown(
-    f"""
-    <div style="text-align: center;">
-        <img src="https://https://github.com/vegumaheshbabu/Krishna/edit/main/krishna.gif" alt="krishna gif" width="650">
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+gif_path = os.path.join(current_dir, "krishna.gif")
 
+# Check if file exists
+if os.path.exists(gif_path):
+    # Convert the GIF to Base64
+    with open(gif_path, "rb") as gif_file:
+        gif_base64 = base64.b64encode(gif_file.read()).decode("utf-8")
+    
+    # Embed the GIF in HTML
+    st.markdown(
+        f"""
+        <div style="text-align: center;">
+            <img src="data:image/gif;base64,{gif_base64}" alt="krishna gif" width="650">
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+else:
+    st.error(f"GIF file not found: {gif_path}")
 
 def run_flow(message: str) -> dict:
     api_url = f"{BASE_API_URL}/lf/{LANGFLOW_ID}/api/v1/run/{ENDPOINT}"

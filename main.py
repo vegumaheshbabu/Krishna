@@ -37,7 +37,7 @@ st.markdown(
 current_dir = os.path.dirname(__file__)
 
 
-resume_image = os.path.join(current_dir, 'krishna.png')
+resume_image = os.path.join(current_dir, 'krishna.gif')
 st.image(resume_image, width=650, use_container_width='auto')
 
 

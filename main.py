@@ -70,7 +70,7 @@ def run_flow(message: str) -> dict:
     return response.json()
 
 def main():
-    st.title("Chat Interface")
+    st.title("Radhe Radhe..")
     
     message = st.text_area("Message", placeholder="Enter your question")
     

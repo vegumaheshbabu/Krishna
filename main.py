@@ -11,6 +11,35 @@ FLOW_ID = "58a67692-0086-44aa-8f32-d0ea3bc6cb38"
 APPLICATION_TOKEN = os.environ.get("APP_TOKEN")
 ENDPOINT = "rag-16000"
 
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: #F7729C;
+    }
+    .title {
+        font-size: 3em;
+        color: #4CAF50;
+    }
+    .subtitle {
+        font-size: 1.5em;
+        color: #555555;
+    }
+    .subtext {
+        font-size: 1em;
+        color: #777777;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+current_dir = os.path.dirname(__file__)
+
+
+resume_image = os.path.join(current_dir, 'krishna.png')
+st.image(resume_image, width=650, use_container_width='auto')
+
 
 def run_flow(message: str) -> dict:
     api_url = f"{BASE_API_URL}/lf/{LANGFLOW_ID}/api/v1/run/{ENDPOINT}"
